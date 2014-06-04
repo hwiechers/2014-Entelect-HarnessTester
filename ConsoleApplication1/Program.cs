@@ -211,6 +211,10 @@ namespace ConsoleApplication1
                 return;
             }
 
+            File.AppendAllText("log.txt", 
+                string.Format("Ply {0}", ply) + Environment.NewLine +
+                File.ReadAllText(args[0]) + Environment.NewLine);
+
             File.WriteAllText("ply.txt", (ply + 1).ToString());
 
             File.WriteAllText("game.state", output[ply]);
